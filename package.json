@@ -1,0 +1,37 @@
+{
+  "name": "likec4-vite-template",
+  "version": "0.0.1",
+  "private": true,
+  "description": "LikeC4 vite template",
+  "scripts": {
+    "generate": "likec4 codegen react -o src/likec4/index.tsx",
+    "dev": "npm run generate && vite",
+    "build": "npm run generate && vite build",
+    "preview": "vite preview"
+  },
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/likec4/template-vite.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/likec4/template-vite/issues"
+  },
+  "homepage": "https://github.com/likec4/template-vite#readme",
+  "dependencies": {
+    "@likec4/diagrams": "latest",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@likec4/cli": "latest",
+    "@vitejs/plugin-react": "^4.0.4",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "@types/node": "^18.11.10",
+    "typescript": "^5.2.2",
+    "vite": "^4.4.8",
+    "vite-plugin-watch-and-run": "^1.1.3"
+  } 
+}

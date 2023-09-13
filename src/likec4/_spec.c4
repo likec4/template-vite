@@ -1,0 +1,19 @@
+specification {
+
+  element actor {
+    style {
+      shape person
+    }
+  }
+
+  element system
+
+  element container
+  element app
+  element database {
+    style {
+      shape cylinder
+    }
+  }
+
+}

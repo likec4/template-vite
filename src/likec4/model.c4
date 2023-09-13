@@ -1,0 +1,123 @@
+model {
+
+  customer = actor 'Customer' {
+    description 'The regular customer of the system'
+  }
+
+  cloud = system 'Cloud System' {
+    description '
+      Our SaaS platfrom that allows
+      customers to interact with
+      the latest technologies
+    '
+
+    ui = container 'Frontends' {
+      technology 'React/TypeScript'
+      description 'All the frontend applications'
+      style {
+        shape browser
+      }
+
+      dashboard = app 'Customer Dashboard' {
+        technology 'React/TypeScript'
+        description '
+          Web application, that
+          allows customers to interact
+          with the system
+        '
+        style {
+          shape browser
+        }
+        
+        -> graphql 'fetches data'
+      }
+
+      customer -> dashboard 'opens in browser'      
+    }
+
+
+    backend = container 'Backend' {
+      technology 'Java/Spring'
+      description 'The backend services of the cloud system'
+
+      graphql = app 'GraphQL API' {
+        description 'The GraphQL API of the cloud system'        
+      }
+
+      db = database 'Database' {
+        technology 'PostgreSQL'
+        description 'The database of the cloud system'
+      }
+
+      graphql -> db 'reads and writes data'
+    }  
+
+  }
+
+  customer -> cloud 'uses and pays'
+
+}
+
+views {
+
+  view index {
+    title "Landscape"
+    include *
+
+    autoLayout LeftRight
+
+    style customer {
+      color indigo
+    }
+  }
+
+  view customer of customer {
+    include
+      *,
+      customer -> cloud.*
+
+    style cloud {
+      color muted
+    }
+  }
+
+  view cloud of cloud {
+    include *
+
+    style customer {
+      color muted
+    }
+  }
+
+  view cloud_ui of ui {
+    title "Cloud System: UI"
+    include
+      *,
+      cloud
+
+    style * {
+      color muted
+    }
+    style ui, ui.* {
+      color primary
+    }
+  }
+  
+
+  view cloud_backend of backend {
+    title "Cloud System: Backend"
+    include
+        *,
+        cloud
+
+    style * {
+      color muted
+    }
+    style backend, backend.* {
+      color primary
+    }
+
+    autoLayout LeftRight
+  }
+
+}
