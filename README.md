@@ -4,6 +4,8 @@ This template provides a minimal setup to get HTML with [LikeC4](https://likec4.
 
 [**Live Demo →**](https://likec4-template-vite.pages.dev/)
 
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/likec4/template-vite)
+
 ## Quick Start
 
 1. Create the repository using this template, click on the **Use this template** button.
@@ -19,3 +21,5 @@ This template provides a minimal setup to get HTML with [LikeC4](https://likec4.
 First, run `npm install` to install the dependencies.
 
 Then, run `npm run dev` to start the development server
+
+Refer to the [Vite documentation](https://vitejs.dev/guide/) for more information.
