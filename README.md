@@ -1,5 +1,11 @@
 # LikeC4 Vite Template
 
+⚠️⚠️⚠️
+
+This template is deprecated in favor of the [github.com/likec4/template](https://github.com/likec4/template)
+
+⚠️⚠️⚠️
+
 This template provides a minimal setup to get HTML with [LikeC4](https://likec4.dev) diagrams.
 
 [**Live Demo →**](https://likec4-template-vite.pages.dev/)
